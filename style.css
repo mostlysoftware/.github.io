@@ -1,82 +1,88 @@
-::selection {
-    color: black;
-    background:white ;
-    text-shadow: none;
-}
-
-@keyframes bg {
-	0% { background-position: 0% 50%; }
-	100% { background-position: 100% 50%; }
-}
-
-@keyframes logo {
-    0%   { color: #b94545 }
-    25%  { color: #e73c5c }
-    50%  { color: rebeccapurple }
-    75%  { color: #455fb9 }
-    100% { color: #16b993 }
-}
-
 html { height: 100%; margin: 0; }
+    ::selection {
+        color: black;
+        background:white ;
+        text-shadow: none;
+    }
+    @font-face {
+        font-family: 'Rubik';
+        src: url('assets/Rubik-VariableFont_wght.ttf'),url('assets/Rubik-Italic-VariableFont_wght.ttf');
+    }
+    @font-face {
+        font-family: 'Reenie Beanie';
+        src: url('assets/ReenieBeanie-Regular.ttf');
+    }
+    @keyframes bg {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+    }
+    @keyframes logo {
+        0%   { color: #b94545 }
+        25%  { color: #e73c5c }
+        50%  { color: rebeccapurple }
+        75%  { color: #455fb9 }
+        100% { color: #16b993 }
+    }
 
-body * { box-sizing: border-box; }
-
-body > * { grid-area: e; }
 
 body { 
-    margin: 0;
-	min-height: 100%; 
-    font-family: 'Rubik', sans-serif;
-    color: #eee;
-    background: linear-gradient(90deg,  #b94545, #e73c5c, rebeccapurple,#455fb9, #16b993) fixed;
-    background-size: 10000% 10000%;
-    animation: bg linear 60s infinite alternate;
-    font-size: 18px;
-    font-weight: 300;
-    text-align: center;
-}
-
-a:hover {
-    background-color: black;
-}
-a { 
-    color:white;
-    font-style: italic;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color .2s;
-    border-radius: 10px;
-}
+        margin: 0;
+        min-height: 100%; 
+        font-family: 'Rubik', sans-serif;
+        color: #eee;
+        background: linear-gradient(90deg,  #b94545, #e73c5c, rebeccapurple,#455fb9, #16b993) fixed;
+        background-size: 10000% 10000%;
+        animation: bg linear 60s infinite alternate;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    body * { 
+        box-sizing: border-box; 
+    }
+    a:hover {
+        text-shadow: -3px 3px 1px rgba(0,0,0,1);
+        margin: -2px -2px 0 0;
+        padding: 0 0 2px 2px ;
+    }
+    a { 
+        color:white;
+        position: relative;
+        font-style: italic;
+        text-decoration: none;
+        transition: text-shadow .2s, margin .2s, padding .2s;
+        border-radius: 10px;
+        text-shadow: -1px 1px 1px rgba(0,0,0,.5);
+    }
 
 header {
-    display:flex;
-    justify-content: center;
-    align-items: flex-end;
-    align-content: flex-end;
-    height: 50vh;
-    min-height: 200px;
-    background: black;
-}
+        display:flex;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: flex-end;
+        height: 50vh;
+        min-height: 200px;
+        background: black;
+    }
+    .logo {
+        margin-bottom: -7px;
+        font-size: 40px;
+        line-height: 100%;
+        font-weight: 400;
+        font-style: italic;
+    }
+    .logo .part-1 {
+        position: relative;
+        top:8px;
+        font-size: 99px;
+        font-family: 'Reenie Beanie', cursive;
+    }
+    .logo .part-2 {
+        text-transform: lowercase;
+        font-style: normal;
+        animation: logo linear 60s infinite alternate;
+    }
 
-.logo {
-    margin-bottom: -7px;
-    font-size: 40px;
-    line-height: 100%;
-    font-weight: 400;
-    font-style: italic;
-}
-.logo .part-1 {
-    position: relative;
-    top:8px;
-    font-size: 99px;
-    font-family: 'Reenie Beanie', cursive;
-}
-.logo .part-2 {
-    text-transform: lowercase;
-    font-style: normal;
-    animation: logo linear 60s infinite alternate;
-}
-.info {
-    margin-top: 50px;
-    text-align: center;
-}
+main {
+        margin-top: 50px;
+        text-align: center;
+    }
