@@ -26,17 +26,14 @@ body > * { grid-area: e; }
 body { 
     margin: 0;
 	min-height: 100%; 
-    display:grid;
-    grid: "a b c" 50vh "d e f" auto / 1fr minmax(0, 1160px) 1fr;
     font-family: 'Rubik', sans-serif;
     color: #eee;
-    background: 
-        linear-gradient(180deg, black 50%, rgba(0,0,0,0) 50%) no-repeat,
-        linear-gradient(90deg,  #b94545, #e73c5c, rebeccapurple,#455fb9, #16b993) fixed;
+    background: linear-gradient(90deg,  #b94545, #e73c5c, rebeccapurple,#455fb9, #16b993) fixed;
     background-size: 10000% 10000%;
     animation: bg linear 60s infinite alternate;
     font-size: 18px;
     font-weight: 300;
+    text-align: center;
 }
 
 a:hover {
@@ -47,14 +44,21 @@ a {
     font-style: italic;
     text-decoration: none;
     font-weight: 500;
-    transition: background-color .3s;
+    transition: background-color .2s;
     border-radius: 10px;
 }
 
+header {
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+    height: 50vh;
+    min-height: 200px;
+    background: black;
+}
+
 .logo {
-    grid-area: b;
-    text-align: center;
-    align-self: flex-end;
     margin-bottom: -7px;
     font-size: 40px;
     line-height: 100%;
