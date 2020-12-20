@@ -1,0 +1,66 @@
+::selection {
+    color: black;
+    background:white ;
+    text-shadow: none;
+}
+
+
+html { height: 100%; margin: 0; }
+
+body * { box-sizing: border-box; }
+
+body > * { grid-area: m; }
+
+body { 
+    margin: 0;
+	min-height: 100%; 
+    display:grid;
+    grid: 
+        [h1] "h h h" 50vh [h2]
+        [m1] "l m r" auto [m2]
+        / 1fr minmax(0, 1160px) 1fr;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    background: 
+        linear-gradient(180deg, rgba(28,27,31,1) 40%, black 50%, rgba(0,0,0,0) 50%) no-repeat,
+        linear-gradient(90deg,  #b94545, #e73c5c, rebeccapurple,#455fb9, #16b993) fixed;
+    background-size: 10000% 10000%;
+    animation: bg linear 60s infinite alternate;
+    font-size: 18px;
+    font-weight: 10;
+}
+
+.logo {
+    grid-area: h;
+    justify-self: center;
+    align-self: flex-end;
+    margin-bottom: -7px;
+    font-size: 40px;
+    line-height: 100%;
+    font-weight: 400;
+    font-style: italic;
+}
+.logo .part-1 {
+    position: relative;
+    top:8px;
+    font-size: 99px;
+    font-family: 'Reenie Beanie', cursive;
+}
+.logo .part-2 {
+    text-transform: lowercase;
+    font-style: normal;
+    animation: logo linear 60s infinite alternate;
+}
+
+@keyframes bg {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+@keyframes logo {
+    0%   { color: #b94545 }
+    25%  { color: #e73c5c }
+    50%  { color: rebeccapurple }
+    75%  { color: #455fb9 }
+    100% { color: #16b993 }
+}
