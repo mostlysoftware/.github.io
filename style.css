@@ -16,6 +16,13 @@ html { height: 100%; margin: 0; }
         0% { background-position: 0% 50%; }
         100% { background-position: 100% 50%; }
     }
+    @keyframes border {
+        0%   { border-color: #b94545 }
+        25%  { border-color: #e73c5c }
+        50%  { border-color: rebeccapurple }
+        75%  { border-color: #455fb9 }
+        100% { border-color: #16b993 }
+    }
     @keyframes logo {
         0%   { color: #b94545 }
         25%  { color: #e73c5c }
@@ -41,43 +48,8 @@ body {
         box-sizing: border-box; 
     }
     a { 
-        display: inline-block;
-        position: relative;
         font-style: italic;
         text-decoration: none;
-        transition: text-shadow .2s, margin .2s, padding .2s, transform .2s, blur .2s;
-        text-shadow: -1px 1px 2px rgba(0,0,0, .5);
-    }
-        a:hover {
-            margin: -2px -2px 0 0;
-            padding: 0 0 2px 2px ;
-        }
-        a:not([shadow]) {
-            color: white;
-        }
-        a[shadow] {
-            color: transparent;
-            transform-origin: right center;
-        }
-        a:not([shadow]):hover {
-            text-shadow: -3px 3px 2px rgba(0,0,0, .5);
-        }
-        a[shadow]:hover {
-            transform: rotate(-3deg);
-        }
-        a:after  {
-            content:attr(shadow);
-            transition: text-shadow .2s, margin .2s, padding .2s, transform .2s;
-            position: absolute;
-            color:white;
-            left:0;
-            z-index: 1;
-            transform-origin: right center;
-        }
-        a[shadow]:hover::after {
-            transform: rotate(3deg);
-            margin: -2px -2px 0 0;
-            padding: 0 0 2px 2px ;
         }
 
 header {
@@ -93,6 +65,9 @@ header {
         padding:0 9px 0 7px;
         border-radius: 10px;
         border: solid 1px white;
+    }
+    header a:not(.icon):hover {
+        border-color: ;
     }
     .logo {
         margin-bottom: -7px;
@@ -119,4 +94,39 @@ main {
     padding: 0 20px;
     text-align: center;
     overflow-wrap: break-word;
-}
+    }
+    main a{
+        display: inline-block;
+        transition: text-shadow .2s, margin .2s, padding .2s, transform .2s, blur .2s;
+        text-shadow: -1px 1px 2px rgba(0,0,0, .5);
+    }
+        main a:not([shadow]) {
+            color: white;
+        }
+        main a:not([shadow]):hover {
+            text-shadow: -4px 4px 2px rgba(0,0,0, .4);
+            margin: -4px -2px 0 0;
+            padding: 0 0 4px 2px ;
+        }
+        main a[shadow] {
+            position: relative;
+            color: transparent;
+            transform-origin: right center;
+        }
+        main a[shadow]:hover {
+            transform: rotate(-3deg);
+        }
+        main a[shadow]:after  {
+            content:attr(shadow);
+            transition: text-shadow .2s, margin .2s, padding .2s, transform .2s;
+            position: absolute;
+            color:white;
+            left:0;
+            z-index: 1;
+            transform-origin: right center;
+        }
+        main a[shadow]:hover::after {
+            transform: rotate(3deg);
+            margin: -2px -2px 0 0;
+            padding: 0 0 2px 2px ;
+        }
