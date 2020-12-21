@@ -32,27 +32,42 @@ body {
         color: #eee;
         background: linear-gradient(90deg,  #b94545, #e73c5c, rebeccapurple,#455fb9, #16b993) fixed;
         background-size: 10000% 10000%;
-        animation: bg linear 60s infinite alternate;
+        animation: bg linear 30s infinite alternate;
         font-size: 18px;
         font-weight: 300;
     }
     body * { 
         box-sizing: border-box; 
     }
-    a:hover {
-        text-shadow: -3px 3px 1px rgba(0,0,0,1);
-        margin: -2px -2px 0 0;
-        padding: 0 0 2px 2px ;
-    }
     a { 
-        color:white;
+        display: inline-block;
+        position: relative;
+        color: transparent;
         position: relative;
         font-style: italic;
         text-decoration: none;
-        transition: text-shadow .2s, margin .2s, padding .2s;
-        border-radius: 10px;
-        text-shadow: -1px 1px 1px rgba(0,0,0,.5);
+        transition: text-shadow .2s, margin .2s, padding .2s, transform .2s, blur .2s;
+        text-shadow: -1px 1px 2px rgba(0,0,2, .5);
+        transform-origin: right center;
     }
+        a:hover {
+            text-shadow: -2px 2px 2px rgba(0,0,0, .5);
+            transform: rotate(-3deg);
+        }
+        a:after {
+            content: '@MostlySoftware';
+            transition: text-shadow .2s, margin .2s, padding .2s, transform .2s;
+            position: absolute;
+            color:white;
+            left:0;
+            z-index: 1;
+            transform-origin: right center;
+        }
+        a:hover::after {
+            transform: rotate(3deg);
+            margin: -2px -2px 0 0;
+            padding: 0 0 2px 2px ;
+        }
 
 header {
         display:flex;
@@ -79,7 +94,7 @@ header {
     .logo .part-2 {
         text-transform: lowercase;
         font-style: normal;
-        animation: logo linear 60s infinite alternate;
+        animation: logo linear 30s infinite alternate;
     }
 
 main {
