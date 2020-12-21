@@ -89,6 +89,11 @@ header {
         min-height: 200px;
         background: black;
     }
+    header a:not(.icon) {
+        padding:0 9px 0 7px;
+        border-radius: 10px;
+        border: solid 1px white;
+    }
     .logo {
         margin-bottom: -7px;
         font-size: 40px;
