@@ -87,6 +87,9 @@ header {
         font-style: normal;
         animation: logo linear 30s infinite alternate;
     }
+    .header .gigglers {
+        
+    }
 
 main {
     max-width: 1140px;
